@@ -3,6 +3,10 @@ body {
     padding: 0;
     font-family: sans-serif;
 }
+#menu-list{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .menu-container, .order-container {
     width: 50%;
@@ -28,3 +32,16 @@ body {
     font-weight: bold;
     color: #008000;
 }
+.food-item {
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 25%;
+  }
+  
+  .food-item img {
+    width:100px;
+    margin-right: 10px;
+  }
+  

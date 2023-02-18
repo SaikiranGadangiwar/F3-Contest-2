@@ -5,12 +5,48 @@ function getMenu() {
     .then(data => {
         const menuList = document.getElementById('menu-list');
         data.forEach(item => {
-            const menuItem = document.createElement('li');
-            menuItem.innerText = `${item.name} - $${item.price}`;
+            const menuItem = document.createElement('div');
+
+            menuItem.classList.add('food-item');
+            
+            const image = document.createElement('img');
+            image.src = item.img;
+           // image.innerText = `${item.img}`;
+
+           const details = document.createElement('p');
+
+           details.innerText = `${item.name} - $${item.price} `;
+
+            menuItem.appendChild(image);
+            menuItem.appendChild(details);
+
             menuList.appendChild(menuItem);
         });
     })
     .catch(error => console.error(error));
+
+
+
+    // fetch('https://free-food-menus-api-production.up.railway.app/burgers')
+    // .then(response => response.json())
+    // .then(data => {
+    //   const menuContainer = document.getElementById('menu-list');
+    //   data.forEach(foodItem => {
+    //     const div = document.createElement('div');
+    //     div.classList.add('food-item');
+    //     const image = document.createElement('img');
+    //     image.src = foodItem.img;
+    //     const p = document.createElement('p');
+    //     p.innerText = foodItem.name + ' - $' + foodItem.price;
+    //     div.appendChild(img);
+    //     div.appendChild(p);
+    //     menuContainer.appendChild(div);
+    //   });
+    // });
+
+
+   
+
 }
 
 // Function to take an order
